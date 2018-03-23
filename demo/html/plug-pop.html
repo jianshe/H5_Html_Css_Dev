@@ -1,0 +1,50 @@
+<div class="plug-example">
+	<h1 class="page_h1">pop插件 <a data-back href="javascript:">返回</a></h1>
+
+	<div class="box">
+		<pre>
+//默认弹出框
+ $("body").popup({
+                title: '<i class="icon-hotline"></i>提示',
+                message: '<b class="font_blue">弹出内容</b>",
+                popClass: "pop-c-one",
+                id: "popExample1",
+                ok: "确认",
+                onOk: function() {
+                  回调函数
+                },
+                cnacel: "取消"
+ })
+</pre>
+	</div>
+
+	<div class="box">
+		<pre>
+//默认样式
+popClass: "pop-c-one"
+		</pre>
+		<a data-pops="style1" href="javascript:;" class="btn-blue">
+			默认样式
+		</a>
+	</div>
+
+	<div class="box">
+		<pre>
+//其他样式 
+popClass: "pop-l-one"  //内容左对齐 一个确认按钮
+</pre>
+		<a data-pops="style2" href="javascript:;" class="btn-blue">
+			一个确认按钮
+		</a>
+	</div>
+
+	<div class="box">
+		<pre>
+//其他样式 
+popClass: "pop-l-two"  //内容左对齐 二个确认按钮
+</pre>
+		<a data-pops="style3" href="javascript:;" class="btn-blue">
+			二个确认按钮
+		</a>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+<div class="plug-example">
+	<h1 class="page_h1">action-sheet2插件 <a data-back href="javascript:">返回</a></h1>
+
+	<div class="box">
+		<pre>
+$('#sheet1').actionSheet2({
+    className: 'login-timeset-pop',
+    data: [
+        {label: '照相', value: 1},
+        {label: '从相册中选择', value: 2}
+    ],
+    onSelect: function(value){
+        console.log('sheet1:' + value);
+    },
+    onCancel: function(){
+        console.log('取消 sheet1');
+    }
+});
+        </pre>
+		<a id="sheet1" href="javascript:;" class="btn-blue">
+			请选择
+		</a>
+
+        		<pre>
+$('#sheet2').actionSheet2({
+    className: 'login-timeset-pop',
+    data: [
+        {label: '照相', value: 1},
+        {label: '从相册中选择', value: 2},
+        {label: '文件夹选择', value: 3}
+    ],
+    onSelect: function(value){
+        console.log('sheet2:' + value);
+    },
+    onCancel: function(){
+        console.log('取消 sheet2');
+    }
+});
+        </pre>
+        <a id="sheet2" href="javascript:;" class="btn-blue">
+            请选择
+        </a>
+	</div>
+
+</div>

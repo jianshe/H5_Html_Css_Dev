@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="applicable-device" content="mobile">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta content="东方财富网" name="description">
+	<title>调用原生方法示例</title>
+	<style type="text/css">
+		.tip{color: red}
+		p{border: 1px solid cadetblue; background: darkgrey; padding: 1rem}
+	</style>
+</head>
+<body>
+<div class="tip">
+	注意：原生接口的调用需要在 APP壳里测试。<br>
+	使用前确保: /public/source/js/util.js 被引用，或被合并打包
+</div>
+<h3>调用系统粘贴板</h3>
+<button id="copy">点击复制</button>
+<pre>EM.util.emH5ClipBoard({
+  content: '窈窕淑女，君子好逑！'
+});
+/**
+* 调用系统剪贴板G:\zzy\workspace\test\webpack
+* @param option
+* option.content 要复制的内容，必须
+* option.callbackName 复制后的回调，如果指定了方法名，则必须全局定义该方法
+*/
+</pre>
+<textarea name="" id="" cols="30" rows="4" placeholder="长按粘贴系统剪贴板的内容"></textarea><br><br>
+
+<h3>调用弹窗</h3>
+<button id="alert">调用原生弹窗</button>
+<pre>EM.util.emH5Alert({
+  content: '要换背景色吗？',
+  okCallbackName: 'onAlertOk'
+});
+window.onAlertOk = function(){
+  document.body.style.background = 'blue';
+};
+/**
+* 调用系统原生 alert
+* @param option
+* option.content 弹出内容，必须
+* option.title 弹框标题，默认“东方财富网”
+* option.okLabel 确认按钮的文字，默认“确定”
+* option.okCallbackName 点击确认按钮的回调，如果指定了方法名，则必须全局定义该方法
+* option.cancelLabel 取消按钮的文字，默认“取消”
+* option.cancelCallbackName 点击取消按钮的回调，如果指定了方法名，则必须全局定义该方法
+*/
+</pre>
+<br><br>
+
+<h3>调用分享</h3>
+<button id="share">我要分享</button>
+<pre>EM.util.emH5Share({
+  title: '快来买，快来卖！',
+  url: 'http://10.10.81.152/LogIn/LogIn',
+  desc: '时间就是金钱！还等什么啊！'
+});
+/**
+* 调用原生分享
+* @param option
+* option.title 分享标题，必须
+* option.url 分享的链接地址，必须
+* option.image 分享图标
+* option.desc 分享的详细描述
+* option.callbackName 分享后的回调，如果指定了方法名，则必须全局定义该方法
+*/
+</pre>
+<br><br>
+<script src="/public/source/js/util.js"></script>
+<script>
+document.getElementById('copy').onclick = function(){
+	EM.util.emH5ClipBoard({
+		content: '窈窕淑女，君子好逑！'
+	});
+};
+document.getElementById('alert').onclick = function(){
+	EM.util.emH5Alert({
+		content: '要换背景色吗？',
+		okCallbackName: 'onAlertOk'
+	});
+};
+window.onAlertOk = function(){
+	document.body.style.background = 'blue';
+};
+document.getElementById('share').onclick = function(){
+	EM.util.emH5Share({
+		title: '快来买，快来卖！',
+		url: 'http://10.10.81.152/LogIn/LogIn',
+		desc: '时间就是金钱！还等什么啊！'
+	});
+};
+</script>
+</body>
+</html>
