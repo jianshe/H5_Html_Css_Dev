@@ -194,7 +194,7 @@ module.exports = {
                 './public/source/js/plugs/tooltips.js'
             ]
         },
-        //炒股大赛
+        //项目资源
         'APP.lib.min.js': {
             src: [
                 './public/source/js/fade.js',
