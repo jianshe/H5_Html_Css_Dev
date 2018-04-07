@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>活动首页</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="../resource/css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="home1 page">
+        <header>
+            <img src="../resource/img/homehead1.png" alt="">
+            <img src="../resource/img/homehead2.png" alt="">
+            <img src="../resource/img/homehead3.png" alt="">
+            <div class="head-con">
+                <i class="hoticon"></i>
+                <div class="freeimg-box">
+                    <div class="freeimg-wrap"></div>
+                </div>
+                <p class="homeTip">即日起，选择证券开户即可参与</p>
+                <div class="scroll-box">
+                    <div>
+                        <p class="scrollp">恭喜
+                            <span>XXX哈哈哈X</span>成功参与</p>
+                    </div>
+                    <div>
+                        <p class="scrollp">恭喜
+                            <span>XXX哈哈哈X</span>成功参与</p>
+                    </div>
+                </div>
+                <a href="javascript:;" class="home-btn">免费参与&gt;</a>
+                <p class="active-link">
+                    <a href="active.html">活动说明</a>
+                </p>
+            </div>
+        </header>
+        <div class="con">
+            <div class="free-title"></div>
+            <div class="box mt">
+                <div class="title">
+                    <p>
+                        <strong>2</strong>款电脑端付费产品永久免费</p>
+                </div>
+                <div class="item1">
+                    <div class="inner">
+                        <img class="img btn-L2" src="../resource/img/level2book.png" alt="">
+                        <img class="img btn-Choice" src="../resource/img/choicebook.png" alt="">
+                        <p class="detail">点击上方产品图标即可查看对应功能详情&gt;</p>
+                    </div>
+                    <p class="get-desc">点此查看产品领取说明&gt;</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="jq"></i>
+                <div class="title">
+                    <p>
+                        <strong>5</strong>款手机端付费产品永久免费</p>
+                </div>
+                <div class="item1">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <a href="javascript:;" class="l2">手机超级Level-2
+                                    <br>
+                                    <span>价值
+                                        <strong>58</strong>元</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="radar">短线雷达
+                                    <br>
+                                    <span>价值
+                                        <strong>8800</strong>元</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="dk">DK操盘密码
+                                    <br>
+                                    <span>价值
+                                        <strong>5980</strong>元</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="vip">VIP财富内参
+                                    <br>
+                                    <span>价值
+                                        <strong>9800</strong>元</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="heart">核心内参
+                                    <br>
+                                    <span>价值
+                                        <strong>1800</strong>元</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" class="more">更多福利
+                                    <br>敬请期待</a>
+                            </li>
+                        </ul>
+                        <p class="detail">点击上方产品图标即可查看对应功能详情&gt;</p>
+                    </div>
+                    <a class="get-desc">点此查看产品领取说明&gt;</a>
+                </div>
+            </div>
+            <a href="javascript:;" class="home-btn">免费参与&gt;</a>
+            <div class="box">
+                <div class="title">
+                    <p>据不完全数据统计</p>
+                </div>
+                <div class="item1">
+                    <div class="inner">
+                        <img class="c-img" src="../resource/img/home-img.png" alt="">
+                        <p class="c-imgp">
+                            <span>使用以上功能的用户</span>
+                            <span>没有使用的用户</span>
+                        </p>
+                        <p class="time">统计时间：2017.1.1-2017.6.30</p>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="home-btn">免费参与&gt;</a>
+        </div>
+        <footer></footer>
+        <a class="btn-right" href="active.html" id="move" style="top: 160px;">活动说明</a>
+    </div>
+
+    <ul class="fixed">
+        <li class="active">
+            <a class="tab1" href="index.html">活动首页</a>
+        </li>
+        <li>
+            <a class="tab2" href="share.html">动态效果</a>
+        </li>
+        <li>
+            <a class="tab3" href="effect.html">难点解析</a>
+        </li>
+        <li>
+            <a class="tab4" href="comments.html">个人归纳</a>
+        </li>
+    </ul>
+    <script src="../resource/js/zepto.min.js"></script>
+    <script src="../resource/js/utils.js"></script>
+    <script type="text/javascript">
+        //定义一个方法并执行
+        (function (doc, win) {
+            var docEl = doc.documentElement;
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+            var recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 50 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        utils.scrollTop($('.scroll-box'));
+        var move = document.getElementById("move"),
+            targetY = 0;
+        window.onscroll = function (e) {
+            var e = e || window.event;
+            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+            targetY = scrolltop + 160;
+            utils.startMove(move, targetY);
+        };
+    </script>
+</body>
+
+</html>

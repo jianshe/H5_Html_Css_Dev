@@ -260,7 +260,7 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
                     var fileContent = fs.readFileSync(PATH.join(PATH.resolve(path, '../'), file), 'utf-8');
                     content = content.replace(config.includeRegExp, fileContent);
                 }
-                console.log("includes: " + includes);
+                //console.log("includes: " + includes);
                 //替换css,js,版本号
                 var version = config.version ? staticVersion : '';
                 content = content.replace(config.cssRegExp, (config.destDir) + 'css/$1.css' + version);
@@ -285,7 +285,7 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
                         console.log(combinedJs + '未找到相应的配置，请先在config.js中配置!');
                     }
                 }
-                console.log("combinedJs: " + combinedJs);
+                //console.log("combinedJs: " + combinedJs);
                 //替换手机调试脚本
                 if (config.weinre) {
                     content = content.replace(/<\/body>/ig, '<script src="http://' + IPv4 + ':8081' + '/target/target-script-min.js#anonymous"></script></body>');

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>全民免费活动</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link href="../resource/css/share.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="page share">
+            <header>
+                <div class="sroll-box">
+                    <div class="p-boxwrap">
+                        <div class="p-box">
+                            <p>恭喜手机尾号9988的用户抽中666元红包</p>
+                            <p>恭喜手机尾号9988的用户抽中777元红包</p>
+                        </div>
+                        <div class="p-box">
+                            <p>恭喜手机尾号9988的用户抽中666元红包</p>
+                            <p>恭喜手机尾号9988的用户抽中777元红包</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="../resource/img/share-head.png" alt="">
+                    <div class="head-mid">
+                        <div class="chances">
+                            <i class="icon-price"></i>
+                            <span>你有</span>
+                            <strong>9</strong>
+                            <span>次机会</span>
+                        </div>
+                        <p>分享即可获得1次抽奖机会，每日最多3次！</p>
+                        <a href="javascript:;" class="share-btn">立即分享</a>
+                    </div>
+                    <div class="head-bottom">
+                        <div class="gift-box">
+                            <img src="../resource/img/gift.png">
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="con">
+                <div class="an-box">
+                    <div class="price-box">
+                        <span class="bar"></span>
+                        <span class="price"></span>
+                    </div>
+                    <span class="hand"></span>
+                    <div class="hand-div"></div>
+                </div>
+            </div>
+            <div class="mask"></div>
+            <div class="share-pop share-pop3 iphonexBox" style="display: none;">
+                <a href="javascript:;" class="shareClose"></a>
+                <h4>
+                    <small>中大奖啦！恭喜您抽中</small>
+                    <br>iPhoneX(256GB)1台</h4>
+                <img src="../resource/img/iphonex.jpg" alt="">
+                <a href="javascript:;" class="sharePopBtn">立即领奖</a>
+            </div>
+        </div>
+    </div>
+    <ul class="fixed">
+        <li>
+            <a class="tab1" href="index.html">活动首页</a>
+        </li>
+        <li class="active">
+            <a class="tab2" href="share.html">分享有礼</a>
+        </li>
+        <li>
+            <a class="tab3" href="effect.html">活动说明</a>
+        </li>
+        <li>
+            <a class="tab4" href="comments.html">用户评价</a>
+        </li>
+    </ul>
+    <script src="../resource/js/zepto.min.js"></script>
+    <script src="../resource/js/touch.js"></script>
+    <script src="../resource/js/utils.js"></script>
+    <script>
+        //定义一个方法并执行
+        (function (doc, win) {
+            var docEl = doc.documentElement;
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+            var recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 50 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
+                /*docEl.style.fontSize = 50 * (clientWidth / 320) + 'px';*/
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        //划断绳子
+        $(".hand-div").on("touchmove", function () {
+            $(".price").addClass("drop");
+            //出弹窗
+            setTimeout(function () {
+                $(".hand,.price-box").hide();
+                utils.popBoxShow($(".iphonexBox"));
+            }, 500);
+        });
+
+        $(".share-pop .shareClose").click(function () {
+            utils.popBoxHide($(".share-pop"));
+        });
+        utils.scrollLeft($(".p-boxwrap"));
+    </script>
+
+</body>
+
+</html>

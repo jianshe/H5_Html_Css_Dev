@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>好的css3实现效果</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <link href="../resource/css/effect.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="step1">
+                <div class="line"></div>
+                <span class="dotD">D点买</span>
+                <span class="dotK">K点卖</span>
+            </div>
+            <div class="step2">
+                <img src="../resource/img/head.png">
+            </div>
+        </header>
+        <div class="page">
+            <div class="item">
+                <h4>
+                    <span class="arrow"></span>
+                </h4>
+            </div>
+            <div class="item">
+                <div class="box">
+                    <div class="left">
+                        <div class="cv" id="left">
+                            <div class="end">50元</div>
+                            <canvas id="canvas" width="150" height="140"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <div class="cv" id="right">
+                            <div class="end">50元</div>
+                            <canvas id="canvas1" width="150" height="140"></canvas>
+                        </div>
+
+                    </div>
+                    <p>每人两次刮奖机会，请用手指在【刮奖区】滑动开奖！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lock" id="lock"></div>
+        <div class="pop" id="pop">
+            <div class="pop-main">
+                <img src="../resource/img/pop1.png">
+                <p class="big">获得50元红包！</p>
+                <p>1分钟股票开户，得50元红包</p>
+                <p>入金≥1000元，再得50元红包</p>
+                <a href="#">立即领取</a>
+            </div>
+        </div>
+    </div>
+    <ul class="fixed">
+        <li>
+            <a class="tab1" href="index.html">活动首页</a>
+        </li>
+        <li class="active">
+            <a class="tab2" href="share.html">分享有礼</a>
+        </li>
+        <li>
+            <a class="tab3" href="active.html">活动说明</a>
+        </li>
+        <li>
+            <a class="tab4" href="comments.html">用户评价</a>
+        </li>
+    </ul>
+
+    <script src="../resource/js/zepto.min.js"></script>
+    <script>
+        //定义一个方法并执行
+        (function (doc, win) {
+            var docEl = doc.documentElement;
+            resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+            var recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 50 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
+                /*docEl.style.fontSize = 50 * (clientWidth / 320) + 'px';*/
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+        $(".item h4").click(function () {
+            $(this).find(".arrow").toggleClass("on");
+        });
+        var $step1 = $(".step1");
+        var $step2 = $(".step2");
+        setTimeout(function () {
+            $step1.hide();
+            $step2.show();
+        }, 5000);
+    </script>
+
+<script type="text/javascript">
+	window.onload=function(){
+		var left = document.getElementById("left");
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext('2d');
+		var cx1=$(left).offset().left;
+		var cx2=$(left).offset().top;
+
+		var right = document.getElementById("right");
+		var canvas1 = document.getElementById("canvas1");
+		var context1 = canvas1.getContext('2d');
+		var cx3=$(right).offset().left;
+		var cx4=$(right).offset().top;;
+
+		canvas.width=left.offsetWidth;
+		canvas.height=left.offsetHeight;
+
+		canvas1.width=right.offsetWidth;
+		canvas1.height=right.offsetHeight;
+
+		//画蒙布
+		context.beginPath();
+		context.fillStyle= '#e3e3e5'; 
+		context.fillRect(0,0,canvas.width,canvas.height);
+		context.closePath();
+		context.beginPath();
+		context.fillStyle= '#333';
+		context.font="italic 12px Arial";
+		context.textAlign='center';
+		context.textBaseline='middle';
+		context.fillText('刮奖区1',left.offsetWidth/2,left.offsetHeight/2);
+		context.closePath();
+
+		context1.beginPath();
+		context1.fillStyle= '#e3e3e5';
+		context1.fillRect(0,0,canvas1.width,canvas1.height);
+		context1.closePath();
+		context1.beginPath();
+		context1.fillStyle= '#333';
+		context1.font="italic 12px Arial";
+		context1.textAlign='center';
+		context1.textBaseline='middle';
+		context1.fillText('刮奖区2',right.offsetWidth/2,right.offsetHeight/2);
+
+		//鼠标按下开刮
+		canvas.ontouchstart=function(){
+		  	canvas.ontouchmove=function(e){
+	  	  	    var touch = e.touches[0];
+		  	  	var x = Number(touch.pageX)-cx1;
+			    var y =  Number(touch.pageY)-cx2;
+			    //destination-out    显示原来的不在后来区域的部分
+			    context.globalCompositeOperation = "destination-out";
+			    context.beginPath();
+			    context.arc(x,y,10,0,Math.PI*2);
+			    context.fill();  
+			    if(percent(context,left.offsetWidth,left.offsetHeight)>50){
+			    	context.clearRect(0,0,left.offsetWidth,left.offsetHeight);
+			    	$("#lock,#pop").css({ "display": "block" });
+		            $('#pop').css('margin-bottom',-($('#pop').height()/2)+'px');
+		            $("body").css({ "overflow": "hidden", "position": "fixed", "width": "100%" });
+			    }
+		  	}
+		}
+		//鼠标抬起不刮开
+		canvas.ontouchend=function(){
+		   canvas.ontouchmove = function(){}
+		} 
+
+		canvas1.ontouchstart=function(){
+		  	canvas1.ontouchmove=function(e){
+	  	  	    var touch = e.touches[0];
+		  	  	var x = Number(touch.pageX)-cx3;
+			    var y =  Number(touch.pageY)-cx4;
+			    //destination-out    显示原来的不在后来区域的部分
+			    context1.globalCompositeOperation = "destination-out";
+			    context1.beginPath();
+			    context1.arc(x,y,10,0,Math.PI*2);
+			    context1.fill();
+			    if(percent(context1,right.offsetWidth,right.offsetHeight)>50){
+			    	context1.clearRect(0,0,right.offsetWidth,right.offsetHeight);
+			    	$("#lock,#pop").css({ "display": "block" });
+		            $('#pop').css('margin-bottom',-($('#pop').height()/2)+'px');
+		            $("body").css({ "overflow": "hidden", "position": "fixed", "width": "100%" });
+			    } 
+		  	}
+		}
+		//鼠标抬起不刮开
+		canvas1.ontouchend=function(){
+		   canvas1.ontouchmove = function(){}
+		} 
+		//判断刮开区域的百分百，返回百分比
+		function percent(c,width,height) {
+	        var imgData = c.getImageData(0, 0, width, height),
+	            pixles = imgData.data,
+	            transPixs = [];
+	        for (var i = 0, j = pixles.length; i < j; i += 4) {
+	            var a = pixles[i + 3];
+	            if (a < 128) {
+	                transPixs.push(i);
+	            }
+	        }
+	        return (transPixs.length / (pixles.length / 4) * 100).toFixed(2);
+        }
+        $(".end").show();
+	} 
+	</script>
+
+</body>
+
+</html>
