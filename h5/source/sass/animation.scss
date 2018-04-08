@@ -1,0 +1,217 @@
+@charset "utf-8";
+@import "common";
+.wrap {
+    .page.blue-bg {
+        background: #1e2a4c;
+    }
+    .page {
+        .track {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .light-alone {
+                position: absolute;
+                top: 0.68rem;
+                right: 1.5rem;
+                width: 2rem;
+                height: 2rem;
+                background: url(../img/light.png) no-repeat;
+                -webkit-animation: flash 2s ease-in-out infinite;
+                -moz-animation: flash 2s ease-in-out infinite;
+                -ms-animation: flash 2s ease-in-out infinite;
+                -o-animation: flash 2s ease-in-out infinite;
+                animation: flash 2s ease-in-out infinite;
+                -webkit-animation-delay: 0.2s;
+                -moz-animation-delay: 0.2s;
+                -ms-animation-delay: 0.2s;
+                -o-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+            }
+            .light-wrap-1,
+            .light-wrap-2,
+            .light-wrap-3 {
+                position: absolute;
+                div {
+                    .ball {
+                        position: absolute;
+                        z-index: 2;
+                        width: .3rem;
+                        height: 0.3rem;
+                        background: url(../img/ball.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    .light {
+                        position: absolute;
+                        width: 70px;
+                        height: 82px;
+                        background: url('../img/light.png') no-repeat;
+                        z-index: 1;
+                    }
+                }
+                p {
+                    color: #3a7ecb;
+                    font-weight: bold;
+                    font-size: .3rem;
+                    text-align: center;
+                    .red {
+                        color: #ff2f47;
+                    }
+                }
+            }
+            .light-wrap-1 {
+                left: 10px;
+                top: 90px;
+                -webkit-animation: Drift1 2s ease-in-out infinite;
+                -moz-animation: Drift1 2s ease-in-out infinite;
+                -ms-animation: Drift1 2s ease-in-out infinite;
+                -o-animation: Drift1 2s ease-in-out infinite;
+                animation: Drift1 2s ease-in-out infinite;
+                -webkit-animation-delay: 0.6s;
+                -moz-animation-delay: 0.6s;
+                -ms-animation-delay: 0.6s;
+                -o-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+                div {
+                    .ball {
+                        left: .3rem;
+                    }
+                    .light {
+                        bottom: -44px;
+                        right: -66px;
+                        -webkit-animation: flash 2s ease-in-out infinite;
+                        -moz-animation: flash 2s ease-in-out infinite;
+                        -ms-animation: flash 2s ease-in-out infinite;
+                        -o-animation: flash 2s ease-in-out infinite;
+                        animation: flash 2s ease-in-out infinite;
+                        -webkit-animation-delay: 0.3s;
+                        -moz-animation-delay: 0.3s;
+                        -ms-animation-delay: 0.3s;
+                        -o-animation-delay: 0.3s;
+                        animation-delay: 0.3s;
+                    }
+                }
+            }
+            .light-wrap-2 {
+                left: 60px;
+                bottom: 115px;
+                -webkit-animation: Drift2 2s ease-in-out infinite;
+                -moz-animation: Drift2 2s ease-in-out infinite;
+                -ms-animation: Drift2 2s ease-in-out infinite;
+                -o-animation: Drift2 2s ease-in-out infinite;
+                animation: Drift2 2s ease-in-out infinite;
+                -webkit-animation-delay: 0.3s;
+                -moz-animation-delay: 0.3s;
+                -ms-animation-delay: 0.3s;
+                -o-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+                div {
+                    .light {
+                        right: -51px;
+                        top: -34px;
+                        -webkit-animation: flash 2s ease-in-out infinite;
+                        -moz-animation: flash 2s ease-in-out infinite;
+                        -ms-animation: flash 2s ease-in-out infinite;
+                        -o-animation: flash 2s ease-in-out infinite;
+                        animation: flash 2s ease-in-out infinite;
+                        -webkit-animation-delay: 0.2s;
+                        -moz-animation-delay: 0.5s;
+                        -ms-animation-delay: 0.5s;
+                        -o-animation-delay: 0.5s;
+                        animation-delay: 0.5s;
+                    }
+                }
+            }
+            .light-wrap-3 {
+                right: 24px;
+                bottom: 97px;
+                -webkit-animation: Drift3 2s ease-in-out infinite;
+                -moz-animation: Drift3 2s ease-in-out infinite;
+                -ms-animation: Drift3 2s ease-in-out infinite;
+                -o-animation: Drift3 2s ease-in-out infinite;
+                animation: Drift3 2s ease-in-out infinite;
+                -webkit-animation-delay: 1s;
+                -moz-animation-delay: 1s;
+                -ms-animation-delay: 1s;
+                -o-animation-delay: 1s;
+                animation-delay: 1s;
+                div {
+                    .light {
+                        -webkit-animation: flash 2s ease-in-out infinite;
+                        -moz-animation: flash 2s ease-in-out infinite;
+                        -ms-animation: flash 2s ease-in-out infinite;
+                        -o-animation: flash 2s ease-in-out infinite;
+                        animation: flash 2s ease-in-out infinite;
+                        -webkit-animation-delay: 0.1s;
+                        -moz-animation-delay: 0.1s;
+                        -ms-animation-delay: 0.1s;
+                        -o-animation-delay: 0.1s;
+                        animation-delay: 0.1s;
+                        left: -0.34rem;
+                        top: -0.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes Drift1 {
+    0% {
+        top: 90px
+    }
+    30% {
+        top: 92px
+    }
+    70% {
+        top: 95px
+    }
+    100% {
+        top: 90px
+    }
+}
+
+@keyframes Drift2 {
+    0% {
+        bottom: 115px
+    }
+    30% {
+        bottom: 113px
+    }
+    70% {
+        bottom: 110px
+    }
+    100% {
+        bottom: 115px
+    }
+}
+
+@keyframes Drift3 {
+    0% {
+        bottom: 97px
+    }
+    30% {
+        bottom: 95px
+    }
+    70% {
+        bottom: 92px
+    }
+    100% {
+        bottom: 97px
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1
+    }
+    30% {
+        opacity: 0.3
+    }
+    70% {
+        opacity: 0.7
+    }
+    100% {
+        opacity: 1
+    }
+}
