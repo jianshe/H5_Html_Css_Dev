@@ -1,14 +1,6 @@
-/**
- * @Author: jianshe
- * @Date:   2018-03-23 09:00:30
- */
-
 var path = require('path');
 var root = path.resolve(__dirname, './');
-//console.log("root:"+root);
-//__dirname变量获取当前模块文件所在目录的完整绝对路径。
-//resolve方法以应用程序根目录为起点，根据所有的参数值字符串解析出一个绝对路径。该方法使用方式如下：
-//path.resolve(path1,[path2],[……])
+
 /**
  * config
  * @module config
@@ -53,9 +45,14 @@ module.exports = {
                     protocol: 'http',
                     host: '10.10.82.85',
                     port: 80
+                },
+                'port': {
+                    protocol: 'http',
+                    host: '10.100.71.73',
+                    port: 9401
                 }
             }[env];
-        })('jianshe')
+        })('port')
     },
 
     /**
@@ -160,48 +157,25 @@ module.exports = {
      * 合并库文件发布目录
      */
     combinedDest: './public/resource/dist/',
-
-    /**
-     * 合并库文件名称
-     * <br>格式：[项目名称].lib.min.js
-     * @example
-//经纪人合并库文件指定
-'freeAgent.lib.min.js': {
-    //src 表示合并的单个文件数组，合并时将按数组顺序合并
-    src: [
-        './public/source/js/lib/zepto.min_v1.js',
-        './public/source/js/plugs/pop.js',
-        './public/source/js/plugs/tips.js',
-        './public/source/js/plugs/action-sheet.js',
-        './public/source/js/apiSet.js',
-        './public/source/js/util.js',
-        './public/source/js/lib/vue.js',
-        './public/source/js/vueDirective.js',
-        './public/source/js/vueComponent.js',
-        './freeAgent/source/js/app.js'
-    ]
-}
-     */
     combined: {
-        //demo
-        'demo.lib.min.js': {
+        'activity.lib.min.js': {
             src: [
                 './public/source/js/lib/zepto.min_v1.js',
-                './public/source/js/plugs/pop.js',
-                './public/source/js/plugs/action-sheet.js',
-                './public/source/js/plugs/action-sheet2.js',
-                './public/source/js/plugs/tips.js',
-                './public/source/js/plugs/tooltips.js'
+                './public/source/js/lib/Swiper-master/js/swiper.min.js',
+                './activity/source/js/util.js'
             ]
         },
-        //项目资源
-        'APP.lib.min.js': {
+        'app7.0.lib.min.js': {
             src: [
-                './public/source/js/fade.js',
-                './public/source/js/fx.js',
-                './public/source/js/pop.js',
-                './public/source/js/swiper.min.js',
-                './public/source/js/zepto.min.js'
+                './public/source/js/lib/zepto.min_v1.js',
+                './public/source/js/lib/Swiper-master/js/swiper.min.js',
+                './pinxuan/app7.0/source/js/util.js'
+            ]
+        },
+        'app7.0-share.lib.min.js': {
+            src: [
+                './public/source/js/lib/zepto.min_v1.js',
+                './pinxuan/app7.0/source/js/util.js'
             ]
         }
     }
