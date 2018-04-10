@@ -1,0 +1,45 @@
+﻿@import "../../../public/source/sass/normalize";
+.load-wrap {
+    $loadingWidth: 346px;
+    $loadingHeight: 242px;
+    width: $loadingWidth;
+    height: $loadingHeight;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$loadingHeight/2 - 100px;
+    margin-left: -$loadingWidth/2;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s;
+    opacity: 1;
+    &.hide {
+        opacity: 0;
+    }
+    .loading-sprite {
+        width: 310px;
+        height: 165px;
+        margin-bottom: 20px;
+        animation: loadingSprite 0.8s linear infinite;
+    }
+    @keyframes loadingSprite {
+        0%,
+        100%,
+        30%,
+        80% {
+            background: url("../img/niu1.png") no-repeat center bottom;
+        }
+        31%,
+        79% {
+            background: url("../img/niu2.png") no-repeat center bottom;
+        }
+    }
+    img {
+        display: block;
+    }
+    span {
+        font-size: 32px;
+        color: #673715;
+        font-family: "Arial";
+    }
+}

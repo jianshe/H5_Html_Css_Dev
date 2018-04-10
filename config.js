@@ -11,7 +11,7 @@ module.exports = {
      * @type {number}
      * @default 8080
      */
-    port: 9998,
+    port: 9997,
 
     /**
      * 是否开启手机调试
@@ -162,20 +162,7 @@ module.exports = {
             src: [
                 './public/source/js/lib/zepto.min_v1.js',
                 './public/source/js/lib/Swiper-master/js/swiper.min.js',
-                './activity/source/js/util.js'
-            ]
-        },
-        'app7.0.lib.min.js': {
-            src: [
-                './public/source/js/lib/zepto.min_v1.js',
-                './public/source/js/lib/Swiper-master/js/swiper.min.js',
-                './pinxuan/app7.0/source/js/util.js'
-            ]
-        },
-        'app7.0-share.lib.min.js': {
-            src: [
-                './public/source/js/lib/zepto.min_v1.js',
-                './pinxuan/app7.0/source/js/util.js'
+                '../../source/js/util.js'
             ]
         }
     }
