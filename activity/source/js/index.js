@@ -186,9 +186,29 @@
         var $loading = $('#loading');
         var $percent = $('#percent');
         var $music = $('#music');
+        var $nextBtn = $('[data-next]'); //翻开相册
+        var $slideUp = $('#slideUp'); //
+        var $tg = $('#tg'); //点击跳过
+        var $np2PopStock = $('#np2PopStock'); //股票点击放大元素
+
+        var _Swiper = null;
+        var startTimer = null;
+
+
         var startTime = new Date().getTime();
 
         $music.on('click', toggleMusic);
+        $nextBtn.on('click', function() {
+            $('.page1').find('.white-mask').show().addClass('mask-on');
+            setTimeout(function() {
+                _Swiper.slideTo(2, 0, true);
+            }, 800);
+        });
+
+        $np2PopStock.on('click', function() {
+            $(this).toggleClass('showBig');
+        });
+
 
         //背景音乐切换
         function toggleMusic() {
@@ -216,12 +236,54 @@
         function enter() {
             toggleMusic();
             $loading.addClass('hide');
-        }
+            setTimeout(function() {
+                $loading.remove();
+                _Swiper = new Swiper('#stage-swiper', {
+                    direction: 'vertical',
+                    noSwiping: true,
+                    noSwipingClass: 'stop-swiping',
+                    onTouchStart: function() {
+                        //在翻开相册前先隐藏蒙版
+                        $('.page1, .page2').find('.white-mask').hide().removeClass('mask-on');
+                    },
+                    onSlideChangeStart: function(_Swiper) {
+                        _Swiper.lockSwipes(); //锁定_Swiper，阻止其滑动。可以使用 mySwiper.unlockSwipes() 解锁。
+                        $slideUp.hide();
+                    },
+                    onSlideChangeEnd: function(swiper) {
+                        var index = swiper.activeIndex;
+                        _Swiper.lockSwipes();
+                        if (index === 0 || index === 1) {
+                            $slideUp.hide();
+                            $('.page2').find('.white-mask').show().removeClass('mask-on');
+                            _Swiper.unlockSwipes();
+                        }
+                        pageSprite(swiper.activeIndex, swiper);
+                        //var slideUpShowDelays = [0, 5, 5.5, 6.5, 4.5, 5.5, 4.5, 4.3, 0];
+                        var slideUpShowDelays = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                        if (index > 1 && index < 9) {
+                            console.log(slideUpShowDelays[index], '秒后才能滑动');
+                            setTimeout(function() {
+                                $slideUp.show();
+                                _Swiper.unlockSwipes();
+                            }, slideUpShowDelays[index] * 1000);
+                        }
+                    }
+                });
+                window._Swiper = _Swiper;
 
+                startTimer = setTimeout(function() {
+                    _Swiper.slideTo(1, 0, true);
+                }, 5800);
+
+                setTimeout(function() {
+                    $tg.show(500);
+                }, 10);
+            }, 100);
+        }
         init(preImg, imgResource, function(s) {
             console.log('正在加载...' + s.complete + '/' + s.total);
             $percent.html((s.complete / s.total * 100).toFixed(0) + '%');
-
         }, function(imgs, s) {
             //console.log('图片资源已加载完成，计划加载:' + s.total + ', 加载成功:' + s.load + '错误:' + s.error);
             var loadingTimeDelay = new Date().getTime() - startTime;
@@ -233,6 +295,52 @@
                 enter();
             }
         });
+
+        //页面动画精灵
+        function pageSprite(index, swiper) {
+            $('.stage').find('[data-sprite]').removeClass('sprite-on');
+            var pageSpriteMap = {
+                'page0': function() {},
+                'page1': function() {},
+                'page2': function() {
+                    initPageSprite(index);
+                    pdTimer = setTimeout(function() {
+                        paiDui && paiDui.play();
+                    }, 1500);
+                },
+                'page3': function() {
+                    initPageSprite(index);
+                },
+                'page4': function() {
+                    initPageSprite(index);
+                },
+                'page5': function() {
+                    initPageSprite(index);
+                    jpTimer = setTimeout(function() {
+                        jianPan && jianPan.play();
+                    }, 2500);
+                },
+                'page6': function() {
+                    initPageSprite(index);
+                },
+                'page7': function() {},
+                'page8': function() {
+                    initPageSprite(index);
+                }
+            };
+            if (pageSpriteMap['page' + index]) {
+                pageSpriteMap['page' + index](swiper);
+            }
+
+            function initPageSprite(index) {
+                $('.page' + index).find('[data-sprite]').each(function(index, el) {
+                    setTimeout(function() {
+                        $(el).addClass('sprite-on');
+                    }, el.getAttribute('data-delay') * 1000);
+                });
+            }
+        }
+
 
     });
 
