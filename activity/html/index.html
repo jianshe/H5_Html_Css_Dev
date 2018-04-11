@@ -10,12 +10,35 @@
 </head>
 
 <body>
+    <audio id="bgm" preload="none" loop="loop">
+        <source src="../resource/ogg/bgm7.0.ogg" type="audio/ogg">
+        <source src="../resource/ogg/bgm7.0.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="btn-play" preload>
+        <source src="../resource/ogg/btn-play.OGG" type="audio/mpeg">
+        <source src="../resource/ogg/btn-play.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="shou-yin" preload>
+        <source src="../resource/ogg/shouyin.ogg" type="audio/mpeg">
+        <source src="../resource/ogg/shouyin.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="jian-pan" preload="none" loop="loop">
+        <source src="../resource/ogg/jianpan.ogg" type="audio/mpeg">
+        <source src="../resource/ogg/jianpan.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="pai-dui" preload="none" loop="loop">
+        <source src="../resource/ogg/paidui.ogg" type="audio/mpeg">
+        <source src="../resource/ogg/paidui.mp3" type="audio/mpeg">
+    </audio>
     <div id="stage" class="stage-wrap" data-scale>
         <div class="stage">
+            <div class="tg" id="tg"></div>
+            <div id="music" class="music-control"></div>
             <div id="loading" class="load-wrap">
                 <div id="loadingSprite" class="sprite loading-sprite"></div>
                 <span id="percent">0%</span>
             </div>
+            <div class="item share-mask" id="shareMask"></div>
         </div>
     </div>
     <div class="arrow-down" id="slideUp"></div>

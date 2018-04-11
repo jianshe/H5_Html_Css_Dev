@@ -1,4 +1,82 @@
 ﻿@import "../../../public/source/sass/normalize";
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+audio {
+    display: none;
+}
+
+[data-scale] {
+    opacity: 0;
+    transition: all 0.3s;
+    display: none;
+}
+
+[data-scale].fadeIn {
+    opacity: 1;
+}
+
+$stageWidth: 750px;
+$stageHeight: 1334px;
+.stage-wrap {
+    position: relative;
+}
+
+.stage {
+    position: absolute;
+    width: $stageWidth;
+    height: $stageHeight;
+    left: 50%;
+    top: 50%;
+    margin-top: -$stageHeight/2;
+    margin-left: -$stageWidth/2;
+    background: url("../img/bg.jpg") no-repeat 0 0;
+    overflow: hidden;
+}
+
+$musicCSize: 80px;
+.music-control {
+    width: $musicCSize;
+    height: $musicCSize;
+    position: absolute;
+    top: 28px;
+    right: 30px;
+    z-index: 99;
+    display: none;
+    &.music-off {
+        background: url("../img/music-off.png") no-repeat 0 0;
+    }
+    &.music-on {
+        background: url("../img/music-on.png") no-repeat 0 0;
+        animation: musicRotate 8s linear infinite;
+        -webkit-animation: musicRotate 8s linear infinite;
+    }
+}
+
+@keyframes musicRotate {
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.sprite {
+    display: block;
+    margin: 0 auto;
+}
+
 .load-wrap {
     $loadingWidth: 346px;
     $loadingHeight: 242px;
