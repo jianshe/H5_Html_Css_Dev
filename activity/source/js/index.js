@@ -7,7 +7,7 @@
     var u = navigator.userAgent;
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-    var mobileSafari = navigator.userAgent.indexOf('eastmoney_ios') > -1;
+    var mobileSafari = navigator.userAgent.indexOf('xxxxxx_ios') > -1;
     var audio = document.getElementById('bgm');
     var btnPlay = document.getElementById('btn-play');
     var shouYin = document.getElementById('shou-yin');
@@ -229,7 +229,7 @@
         var _p7Timer = null; //设置一个定时器，阻止_SwiperP7自动滚动
         var startTimer = null; //设置一个定时器，延时切换到第一页
         var pdTimer = null; //设置一个器，延时播放排队背景音乐
-	var jpTimer = null;//设置一个定时器，延时播放敲键盘背景音乐播放
+        var jpTimer = null; //设置一个定时器，延时播放敲键盘背景音乐播放
         var startTime = new Date().getTime();
 
         $scrollWrap.on('scroll', function(e) {

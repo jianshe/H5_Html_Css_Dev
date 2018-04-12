@@ -237,7 +237,7 @@ StaticServlet.prototype.sendFile_ = function(req, res, path) {
     var self = this;
     res.setHeader("Access-Control-Allow-Origin", '*');
     res.setHeader("Server", 'Node V8');
-    res.setHeader("X-Powered-By", 'EastMoney: Front-end');
+    res.setHeader("X-Powered-By", 'xxxxxx: Front-end');
     if (fileType === 'html') {
         fs.readFile(path, 'utf-8', function(err, content) {
             if (err) {
