@@ -1,0 +1,55 @@
+@media only screen and (max-height: 480px){
+  .page2{
+    .np2-man-wrap,
+    .np2-man-mask{
+      bottom: -40px;
+    }
+  }
+
+  .page3{
+    .text-desc2{
+      top: 44px;
+    }
+    .shouyinji{
+      top: 220px;
+    }
+    .line-djbf{
+      top: 672px;
+    }
+    &.swiper-slide-active {
+      .bbj{
+        top: 750px;
+      }
+    }
+  }
+
+  .page5 {
+    .p6-text-desc{
+      top: 50px;
+    }
+    .p6-bg{
+      top: 216px;
+    }
+  }
+
+  .page7{
+    .p8-bg-wrap{
+      top: 268px;
+    }
+    .p8-cloud1{
+      top: 252px;
+    }
+    .p8-cloud2{
+      top: 1070px;
+    }
+    .p8-text-desc{
+      top: 50px;
+    }
+  }
+
+  .page8{
+    .np8-btn-group{
+      bottom: 80px;
+    }
+  }
+}
