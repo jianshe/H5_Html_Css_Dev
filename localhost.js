@@ -157,7 +157,7 @@ StaticServlet.prototype.apiHandle_ = function(req, res, path) {
     apiName = apiName[1];
     res.setHeader("Access-Control-Allow-Origin", '*');
     res.setHeader("Server", 'Node V8');
-    res.setHeader("X-Powered-By", 'EastMoney: Front-end');
+    res.setHeader("X-Powered-By", 'xxxxxx: Front-end');
     if (apiName) {
         mockHandle.parseApi(req, res, path, apiName);
     } else {
