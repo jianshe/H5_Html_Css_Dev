@@ -164,6 +164,13 @@ module.exports = {
                 './public/source/js/lib/Swiper-master/js/swiper.min.js',
                 '../../source/js/util.js'
             ]
+        },
+        'advertisead2.lib.min.js': {
+            src: [
+                './public/source/js/lib/zepto.min_v1.js',
+                './public/source/js/lib/Swiper-master/js/swiper.min.js',
+                './public/source/js/lib/raphael.min.js'
+            ]
         }
     }
 
