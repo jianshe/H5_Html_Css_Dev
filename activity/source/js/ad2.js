@@ -1,12 +1,8 @@
-/**
- * Created by ChenChao on 2017/4/26.
- */
-
 $(function() {
     //6.9变化适配
     transform69();
 
-    var mobileSafari = navigator.userAgent.indexOf('eastmoney_ios') > -1;
+    var mobileSafari = navigator.userAgent.indexOf('xxxxxx_ios') > -1;
     var audio = document.getElementById('Jaudio');
     var Laba = document.getElementById('Laba');
     var isPlay = false;
@@ -86,9 +82,9 @@ $(function() {
         set.push(p);
         set.push(e);
         set.push(t);
-        set.click(function() {
-            location.href = btnLink;
-        });
+        // set.click(function() {
+        //     location.href = btnLink;
+        // });
         r.customAttributes.along = function(v) {
             var point = p.getPointAtLength(v * len);
             return {
