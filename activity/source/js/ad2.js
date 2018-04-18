@@ -82,9 +82,9 @@ $(function() {
         set.push(p);
         set.push(e);
         set.push(t);
-        // set.click(function() {
-        //     location.href = btnLink;
-        // });
+        set.click(function() {
+            //location.href = btnLink;
+        });
         r.customAttributes.along = function(v) {
             var point = p.getPointAtLength(v * len);
             return {
