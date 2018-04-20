@@ -7,27 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>css3 and html5</title>
     <style type="text/css">
-        .content {
-            width: 1200px;
-            display: inline-block;
+        .parent {
+            position: relative;
+            height: 500px;
+            background: #ff43;
         }
         
-        .example {
-            width: 300px;
-            border: 20px solid black;
-            padding: 50px;
-            margin: 0 auto;
-            background: url(https://static.pexels.com/photos/6440/magazines-desk-work-workspace-medium.jpg);
-            background-repeat: no-repeat;
+        .center {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            background: red;
+            top: calc(50%-50px/2);
+            left: calc(50%-50px/2);
         }
     </style>
 </head>
 
 <body>
-    <div class="content">
-        <div class="example">
-
-        </div>
+    <div class="parent">
+        <img class="center" src="../resource/img/bf-btn-on-jpg.jpg" alt="">
     </div>
 </body>
 <script type="text/javascript">
