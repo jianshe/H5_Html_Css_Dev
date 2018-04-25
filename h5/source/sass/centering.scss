@@ -47,29 +47,138 @@
 **情景3：elements have a defined width.
 **/
 
-.containerDiv {
+// .containerDiv {
+//     width: 100%;
+//     height: 100px;
+//     padding-bottom: 40px;
+//     background: #ff7400;
+// }
+// #centeredDiv {
+//     margin: 0 auto;
+//     width: 200px;
+//     height: 100px;
+//     background: #111111;
+//     border: 1px solid #000;
+//     line-height: 100px;
+// }
+// #centeredParagraph {
+//     width: 200px;
+//     margin: 0 auto;
+// }
+// #centeredImage {
+//     display: block;
+//     width: 200px;
+//     margin: 0 auto;
+// }
+
+/**情景4：automic magin**/
+
+// .parent {
+//     position: relative;
+//     height: 500px;
+// }
+// .center {
+//     position: absolute;
+//     margin: auto;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+// }
+
+/**情景5：Using calc()develop Adaptive layout **/
+
+// body {
+//     background: #E8EADD;
+//     color: #3C323A;
+//     padding: 20px;
+// }
+// .wrapper {
+//     width: 1024px;
+//     /* Fallback for browsers that don't support the calc() function */
+//     width: -moz-calc(100% - 40px);
+//     width: -webkit-calc(100% - 40px);
+//     width: calc(100% - 40px);
+//     margin: auto;
+// }
+// #header {
+//     background: #f60;
+//     padding: 20px;
+//     width: 984px;
+//     /*Fallback for browsers that don't support the calc() function*/
+//     width: -moz-calc(100% - 40px);
+//     width: -webkit-calc(100% - 40px);
+//     width: calc(100% - 40px);
+// }
+// #footer {
+//     clear: both;
+//     background: #000;
+//     padding: 20px;
+//     color: #fff;
+//     width: 984px;
+//     /* Fallback for browsers that don't support the calc() function */
+//     width: -moz-calc(100% - 40px);
+//     width: -webkit-calc(100% - 40px);
+//     width: calc(100% - 40px);
+// }
+// #main {
+//     border: 8px solid #B8C172;
+//     float: left;
+//     margin-bottom: 20px;
+//     margin-right: 20px;
+//     padding: 20px;
+//     width: 704px;
+//     /* Fallback for browsers that don't support the calc() function */
+//     width: -moz-calc(75% - 20px * 2 - 8px * 2);
+//     width: -webkit-calc(75% - 20px * 2 - 8px * 2);
+//     width: calc(75% - 20px * 2 - 8px * 2);
+// }
+// #accessory {
+//     border: 8px solid #B8C172;
+//     float: right;
+//     padding: 10px;
+//     width: 208px;
+//     /* Fallback for browsers that don't support the calc() function */
+//     width: -moz-calc(25% - 10px * 2 - 8px * 2 - 20px);
+//     width: -webkit-calc(25% - 10px * 2 - 8px * 2 - 20px);
+//     width: calc(25% - 10px * 2 - 8px * 2 - 20px);
+// }
+
+/**情景6：Using translateY to vertical align **/
+
+// div.parent {
+//     height: 100px;
+//     background: blanchedalmond;
+// }
+// div.vertical {
+//     position: relative;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     text-align: center;
+// }
+
+/** 情景7：Centering vertically and horizontally without worry about width and height.**/
+
+.outer-container {
+    position: absolute;
+    display: table;
     width: 100%;
-    height: 100px;
-    padding-bottom: 40px;
-    background: #ff7400;
+    /* This could be ANY width */
+    height: 100%;
+    /* This could be ANY height */
+    background: #ccc;
 }
 
-#centeredDiv {
-    margin: 0 auto;
-    width: 200px;
-    height: 100px;
-    background: #111111;
+.inner-container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.centered-content {
+    display: inline-block;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
     border: 1px solid #000;
-    line-height: 100px;
-}
-
-#centeredParagraph {
-    width: 200px;
-    margin: 0 auto;
-}
-
-#centeredImage {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
 }
