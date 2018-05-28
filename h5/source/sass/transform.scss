@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "reset";
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+// .button {
+//     width: 300px;
+//     height: 200px;
+//     background: #ff7400;
+//     display: inline-block;
+// }
+// .button {
+//     transform: skewX(-45deg);
+//     position: relative;
+// }
+// .button>div {
+//     transform: skewX(45deg);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     margin: auto;
+//     line-height: 200px;
+//     width: 100px;
+// }
+.button {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: inline-block;
+    /* 其他的文字颜色、内边距等样式…… */
+}
+
+.button::before {
+    content: '';
+    /* 用伪元素来生成一个矩形 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skew(45deg);
+}

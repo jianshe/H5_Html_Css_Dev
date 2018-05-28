@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS各种常用布局</title>
+    <style type="text/css">
+        /**方法一、使用flex布局。**/
+        /* * {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #flex {
+            display: flex;
+            display: -webkit-flex;
+            height: 100%;
+        }
+        
+        div {
+            flex-grow: 1;
+            border: 1px solid #ff00ff;
+        } */
+        /** 方法二、width设置为33.33%+absolute**/
+        /*         
+        * {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #flex {
+            position: relative;
+        }
+        
+        div {
+            position: absolute;
+            top: 0px;
+            height: 100%;
+        }
+        
+        #flex div:nth-child(1) {
+            left: 0px;
+            width: 33.33%;
+            background-color: #ffff00;
+        }
+        
+        #flex div:nth-child(2) {
+            left: 33.33%;
+            width: 33.33%;
+            background-color: #ff00ff;
+        }
+        
+        #flex div:nth-child(3) {
+            left: 66.66%;
+            width: 33.33%;
+            background-color: #ff0000;
+        } */
+        /** 方法三、width设置为33.33%+inline-block**/
+        /* * {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #flex {
+            height: 100%;
+            word-spacing: 0px;
+            font-size: 0;
+        }
+        
+        #flex div {
+            display: inline-block;
+            width: 33.33%;
+            height: 100%;
+        }
+        
+        #flex div:nth-child(1) {
+            background-color: #ffff00;
+        }
+        
+        #flex div:nth-child(2) {
+            background-color: #ff00ff;
+        }
+        
+        #flex div:nth-child(3) {
+            background-color: #ff0000;
+        } */
+        /** 方法四、使用float布局**/
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        #flex {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        #flex div {
+            float: left;
+            width: 33.33%;
+            height: 100%;
+        }
+        
+        #flex div:nth-child(1) {
+            background-color: #ffff00;
+        }
+        
+        #flex div:nth-child(2) {
+            background-color: #ff00ff;
+        }
+        
+        #flex div:nth-child(3) {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flex">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+</body>
+
+</html>
