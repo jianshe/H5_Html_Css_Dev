@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import "reset";
+
+/**情景1：左边一栏占一定比例，左栏高度随右栏高度自适应，右栏高度随随左栏自适应**/
+
+// .clear {
+//     clear: both;
+//     width: 0px;
+//     height: 0px;
+//     overflow: hidden;
+// }
+// .w {
+//     width: 960px;
+//     margin: 0px auto;
+//     background-color: #0F91CF;
+//     position: relative;
+//     overflow: hidden;
+// }
+// .w .l-r {
+//     width: 960px;
+//     background-color: #F00;
+//     position: relative;
+//     right: 300px;
+// }
+// .w .l-r .l {
+//     width: 650px;
+//     padding-right: 10px;
+//     float: left;
+//     position: relative;
+//     left: 300px;
+// }
+// .w .l-r .r {
+//     width: 300px;
+//     float: left;
+//     position: relative;
+//     left: 300px;
+// }
+
+/**情景2：左边固定宽度，右边宽度自适应，且高度和浏览器当前高度一致**/
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    padding-left: 300px;
+    position: relative;
+    background: #fff;
+    height: 100%;
+}
+
+.right {
+    float: right;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: red;
+    opacity: .5;
+}

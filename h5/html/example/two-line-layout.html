@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于两栏布局</title>
+    <link href="../../resource/css/two-line-layout.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- 情景1：左边一栏占一定比例，左栏高度随右栏高度自适应，右栏高度随随左栏自适应-->
+    <!-- <div class="w">
+        <div class="l-r">
+            <div class="l">
+                <ul id="ul_elem">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+                <button id="addLeftElement">添加</button>
+            </div>
+            <div class="r">
+                <ul id="r_element">
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                    <li>d</li>
+                    <li>e</li>
+                    <li>f</li>
+                    <li>g</li>
+                    <li>h</li>
+                </ul>
+                <button id="addRightElement">添加</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div> -->
+    <!--情景2：左边固定宽度，右边宽度自适应，且高度和浏览器当前高度一致-->
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <script type="text/javascript">
+        // (function() {
+        //     document.getElementById('addLeftElement').onclick = function() {
+        //         var element = document.createElement("li");
+        //         var node = document.createTextNode("新增加的元素");
+        //         element.appendChild(node);
+        //         document.getElementById('ul_elem').appendChild(element);
+        //     }
+        //     document.getElementById('addRightElement').onclick = function() {
+        //         var element = document.createElement("li");
+        //         var node = document.createTextNode("i");
+        //         element.appendChild(node);
+        //         document.getElementById('r_element').appendChild(element);
+        //     }
+        // })();
+    </script>
+</body>
+
+</html>

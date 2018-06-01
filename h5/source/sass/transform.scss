@@ -26,23 +26,53 @@
 //     line-height: 200px;
 //     width: 100px;
 // }
-.button {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    display: inline-block;
-    /* 其他的文字颜色、内边距等样式…… */
+// .button {
+//     width: 300px;
+//     height: 300px;
+//     position: relative;
+//     display: inline-block;
+//     /* 其他的文字颜色、内边距等样式…… */
+// }
+// .button::before {
+//     content: '';
+//     /* 用伪元素来生成一个矩形 */
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: -1;
+//     background: #58a;
+//     transform: skew(45deg);
+// }
+.transform {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: all 1s ease-out;
 }
 
-.button::before {
-    content: '';
-    /* 用伪元素来生成一个矩形 */
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+.transform:hover {
+    transform: rotate(360deg);
+}
+
+.context {
+    width: 100px;
+    height: 100px;
+    background: blue;
     left: 0;
-    z-index: -1;
-    background: #58a;
-    transform: skew(45deg);
+    position: absolute;
+}
+
+.context:hover {
+    animation: move 0.5s infinite alternate;
+}
+
+@keyframes move {
+    from {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
 }

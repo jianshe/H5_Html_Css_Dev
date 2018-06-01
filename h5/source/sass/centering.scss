@@ -159,26 +159,171 @@
 
 /** 情景7：Centering vertically and horizontally without worry about width and height.**/
 
-.outer-container {
-    position: absolute;
-    display: table;
-    width: 100%;
-    /* This could be ANY width */
+// .outer-container {
+//     position: absolute;
+//     display: table;
+//     width: 100%;
+//     /* This could be ANY width */
+//     height: 100%;
+//     /* This could be ANY height */
+//     background: #ccc;
+// }
+// .inner-container {
+//     display: table-cell;
+//     vertical-align: middle;
+//     text-align: center;
+// }
+// .centered-content {
+//     display: inline-block;
+//     text-align: left;
+//     background: #fff;
+//     padding: 20px;
+//     border: 1px solid #000;
+// }
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// #flex {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     margin-left: -200px;
+//     margin-top: -200px;
+//     width: 400px;
+//     height: 400px;
+//     background-color: #ff00ff;
+// }
+//情景8：//运用IFC
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// html,
+// body {
+//     height: 100%;
+//     text-align: center;
+//     word-spacing: 0px;
+//     font-size: 0;
+// }
+// div {
+//     display: inline-block;
+//     vertical-align: middle;
+// }
+// body div:nth-child(2) {
+//     height: 100%;
+// }
+// #flex {
+//     width: 400px;
+//     height: 400px;
+//     background-color: #ff00ff;
+// }
+//情景9：对float元素实现水平垂直居中
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// html,
+// body {
+//     height: 100%;
+// }
+// body {
+//     text-align: center;
+// }
+// #flex {
+//     display: inline-block;
+//     vertical-align: middle;
+// }
+// body:after {
+//     content: "";
+//     display: inline-block;
+//     width: 0;
+//     height: 100%;
+//     vertical-align: middle;
+// }
+// #flex div {
+//     width: 400px;
+//     height: 400px;
+//     background-color: #ff00ff;
+// }
+//情景10： 利用table-cell实现垂直水平居中
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// #mzz {
+//     display: table-cell;
+//     text-align: center;
+//     vertical-align: middle;
+//     width: 800px;
+//     height: 800px;
+//     background: green;
+// }
+// .zzq {
+//     display: inline-block;
+//     width: 200px;
+//     height: 200px;
+//     background: blue;
+// }
+//情景11：利用定位实现水平垂直居中升级版
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// #mzz {
+//     position: relative;
+//     width: 800px;
+//     height: 800px;
+//     background: green;
+// }
+// .zzq {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 200px;
+//     height: 200px;
+//     background: blue;
+// }
+//情景12：宽度高度不固定(利用absolute实现水平垂直居中)
+// * {
+//     margin: 0px;
+//     padding: 0px;
+//     border: 0px;
+// }
+// #flex {
+//     position: absolute;
+//     top: 25%;
+//     left: 25%;
+//     width: 50%;
+//     height: 50%;
+//     background-color: #ff00ff;
+// }
+//情景13：利用flex（张鑫旭前辈的慕课视频）
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+html,
+body {
     height: 100%;
-    /* This could be ANY height */
-    background: #ccc;
 }
 
-.inner-container {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.centered-content {
-    display: inline-block;
-    text-align: left;
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #000;
+#flex {
+    width: 50%;
+    height: 50%;
+    background-color: #ff00ff;
 }
